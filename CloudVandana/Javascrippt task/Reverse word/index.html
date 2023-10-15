@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function reverseWords(sentence) {
+    const words = sentence.split(' ');
+  
+    const reversedWords = words.map(word => {
+      const punctuation = word.match(/\W+$/);
+      const reversed = word.split('').reverse().join('');
+      return punctuation ? reversed + punctuation[0] : reversed;
+    });
+  
+    const reversedSentence = reversedWords.join(' ');
+  
+    return reversedSentence;
+  }
+  const inputSentence=prompt("Enter String");
+  const reversed = reverseWords(inputSentence);
+   document.write("Reversed string is "+reversed)
+  
+    </script>
+</body>
+</html>
